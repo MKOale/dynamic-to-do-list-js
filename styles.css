@@ -1,64 +1,73 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    padding: 2em;
-    max-width: 600px;
-    margin: auto;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
+  color: #333;
 }
 
-.input-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1em;
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-#task-input {
-    padding: 0.5em;
-    width: 70%;
-    font-size: 1em;
+#taskInput {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
 }
 
-#add-task-btn {
-    padding: 0.5em 1em;
-    margin-left: 0.5em;
-    font-size: 1em;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
+#addButton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
 }
 
-#add-task-btn:hover {
-    background-color: #45a049;
+#addButton:hover {
+  background-color: #0056b3;
 }
 
-#task-list {
-    list-style-type: none;
-    padding: 0;
+#taskList {
+  list-style-type: none;
+  padding: 0;
 }
 
-#task-list li {
-    background-color: #fff;
-    padding: 0.75em;
-    margin-bottom: 0.5em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #ddd;
+#taskList li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .remove-btn {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 0.4em 0.7em;
-    cursor: pointer;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
 .remove-btn:hover {
-    background-color: #c0392b;
+  background-color: #b02a37;
 }
