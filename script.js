@@ -1,18 +1,22 @@
-const taskInput = document.getElementById('taskInput');
-const addButton = document.getElementById('addButton');
-const taskList = document.getElementById('taskList');
+document.addEventListener('DOMContentLoaded', function () {
+  const addButton = document.getElementById('add-task');
+  const taskInput = document.getElementById('task-input');
+  const taskList = document.getElementById('task-list');
 
-function addTask() {
-  const taskText = taskInput.value.trim();
+  function addTask() {
+    const taskText = taskInput.value.trim();
 
-  if (taskText !== '') {
+    if (taskText === '') {
+      alert('Please enter a task');
+      return;
+    }
+
     const li = document.createElement('li');
     li.textContent = taskText;
 
     const removeBtn = document.createElement('button');
     removeBtn.textContent = 'Remove';
     removeBtn.className = 'remove-btn';
-
     removeBtn.onclick = function () {
       taskList.removeChild(li);
     };
@@ -21,14 +25,12 @@ function addTask() {
     taskList.appendChild(li);
     taskInput.value = '';
   }
-}
 
-// Add task on button click
-addButton.addEventListener('click', addTask);
+  addButton.addEventListener('click', addTask);
 
-// Add task on "Enter" key press
-taskInput.addEventListener('keypress', function (event) {
-  if (event.key === 'Enter') {
-    addTask();
-  }
+  taskInput.addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+      addTask();
+    }
+  });
 });
