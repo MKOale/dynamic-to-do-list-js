@@ -1,25 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     // DOM selection
-const taskInput = document.getElementById('task-input');
-const addTaskBtn = document.getElementById('add-task-btn');
-const taskList = document.getElementById('task-list');
-// Load tasks from localStorage
-function loadTasks() {
-    const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
-    storedTasks.forEach(taskText => addTask(taskText, false));
-    // Add remove button to each task
-    taskList.querySelectorAll('li').forEach(li => {
-    // Save tasks to localStorage
-    function saveTasks() {
-        const tasks = [];
-        taskList.querySelectorAll('li').forEach(li => {
-            const text = li.firstChild.textContent.trim();
-            if (text) tasks.push(text);
-        });
-        localStorage.setItem('tasks', JSON.stringify(tasks));
+// 1. Select elements from the DOM
+const taskInput = document.getElementById("task-input");
+const addTaskBtn = document.getElementById("add-task-btn");
+const taskList = document.getElementById("task-list");
+
+// 2. Define the function that adds a task
+function addTask() {
+    const taskText = taskInput.value.trim();
+    if (taskText !== "") {
+        const li = document.createElement("li");
+        li.textContent = taskText;
+        taskList.appendChild(li);
+        taskInput.value = ""; // Clear the input field
     }
-    // Function to add a new task
-    function addTask(taskText = null, save = true) {
+}
+// 3. Add the event listener to the button
+addTaskBtn.addEventListener("click", addTask);
+    // Function to add a task
+    function addTask() {
         if (taskText === null) {
             taskText = taskInput.value.trim();
         }
